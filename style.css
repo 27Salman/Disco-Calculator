@@ -1,0 +1,88 @@
+/* General Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Styling */
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: linear-gradient(to right, rgb(251, 255, 0), rgb(255, 0, 255));
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Calculator Grid */
+.calc-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  gap: 10px;
+}
+
+/* Button Styling */
+.calc-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 5px solid white;
+  border-radius: 20px;
+  outline: none;
+  background-color: rgba(1, 248, 248, 0.6);
+  color: black;
+  transition: all 0.4s ease;
+}
+
+.calc-grid > button:hover {
+  background-color: rgba(69, 139, 145, 0.90);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Wide Buttons (AC, =) */
+.L-span {
+  grid-column: span 2;
+}
+
+/* Output Display */
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(63, 53, 53, 0.9);
+  border: 5px solid white;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: white;
+}
+
+/* Styling for Previous and Current Numbers */
+.output .prev-num {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: rgb(165, 160, 160);
+}
+
+.output .current-num {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: rgb(255, 255, 255);
+}
